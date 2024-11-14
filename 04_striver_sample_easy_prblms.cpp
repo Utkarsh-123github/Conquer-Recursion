@@ -19,7 +19,27 @@ void printNum(int n){
     cout<<n<<" "; 
 }
 
+// Problem 3 : Print sum from 1 to n
+
+void printSum(int n, int sum){  // This is parameterized recursion
+    // base case
+    if(n==0){
+        cout<<sum<<endl;
+        return;
+    }
+    // recursive case
+    printSum(n-1,sum+n);
+}
+
+int printSum2(int n){ // This is non-parameterized recursion or functional recursion
+    //  base case
+    if(n==0){
+        return 0;
+    }
+    return n + printSum2(n-1);
+}
+
 int main(){
-    printNum(5);
+    cout<<printSum2(5);
     return 0;
 }
