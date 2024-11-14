@@ -14,17 +14,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int countSubSeq(int index, int sum, int k, vector<int>&arr, vector<int>subseq){
+int countSubSeq(int index, int sum, int k, vector<int>&arr){
     if(index == arr.size()){
         if(sum == k){
             return 1;
         }
         return 0;
     }
-    subseq.push_back(arr[index]);
-    int pick = countSubSeq(index+1, sum+arr[index], k, arr, subseq);
-    subseq.pop_back();
-    int notpick = countSubSeq(index+1, sum, k, arr, subseq);
+    
+    int pick = countSubSeq(index+1, sum+arr[index], k, arr);
+    int notpick = countSubSeq(index+1, sum, k, arr);
     return pick+notpick;
 }
 
@@ -32,6 +31,6 @@ int main(){
     vector<int>arr = {1, 2, 3};
     int k = 3;
     vector<int>subseq;
-    cout<<countSubSeq(0, 0, k, arr, subseq);
+    cout<<countSubSeq(0, 0, k, arr);
     return 0;
 }
