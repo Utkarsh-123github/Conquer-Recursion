@@ -7,6 +7,9 @@
 // 4. Pick median as pivot.
 // The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x.
 
+// TC = O(nlogn) in average case, O(n^2) in worst case
+// SC = O(1) + O(n) for recursive stack
+
 
 #include<bits/stdc++.h>
 using namespace std;
